@@ -1,0 +1,2 @@
+import { useState, useEffect } from 'react';
+export function useDebounce<T>(val: T, d: number) { const [v, setV] = useState(val); useEffect(() => { const h = setTimeout(()=>setV(val), d); return ()=>clearTimeout(h); }, [val, d]); return v; }
